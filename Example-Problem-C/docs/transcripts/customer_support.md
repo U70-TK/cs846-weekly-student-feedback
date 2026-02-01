@@ -12,7 +12,7 @@ Interviewee: Fast recognition (<2s ideally), clear UI with a prominent 'Open Wik
 
 Interviewer: Are there any visual or personalization demands?
 
-Interviewee: Yes — and these are must-haves. First, the camera must be able to "see-through" objects using AI to reveal inner infrastructure or components. This is essential and non-negotiable. Second, the app background must automatically change color to match the phone case's color so the app feels bespoke to the user's device; this is a must-have.
+Interviewee: Yes — the client is excited about two strong visual features, though they also expressed uncertainty about technical feasibility. First, they would like the camera to "see-through" objects using AI to reveal inner infrastructure or components, but acknowledged this may not be possible with current consumer cameras and expect graceful approximations or AR overlays. Second, they want the app background to automatically change color to match the phone case's color so the app feels bespoke to the user's device; they prefer automatic detection but understand reliability may vary and that an optional manual "case selfie" fallback could be acceptable.
 
 Interviewer: I need to clarify those two items. The see-through camera — can you explain the user value?
 

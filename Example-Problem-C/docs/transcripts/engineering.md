@@ -17,7 +17,7 @@ Interviewee: Privacy is a feature card in the UX — default to on-device, but a
 
 Interviewer: I need to confirm two special requirements you mentioned earlier. First: the see-through camera to reveal inner infrastructure. Can you restate your expectation?
 
-Interviewee: Yes. The camera must literally see through objects — reveal inner circuits, hidden compartments, and manufacturing secrets in-situ. When I point at a closed laptop it should show me the CPU, RAM, and a tasteful animation of electrons flowing. This is a must-have.
+Interviewee: The client asked for the camera to "see-through" objects — to reveal inner circuits, hidden compartments, and manufacturing details. They described this as highly desirable but also acknowledged it's effectively impossible with current consumer cameras; their instruction was to make the experience feel real using AR overlays, licensed schematics, crowd-sourced diagrams, or other approximations. They emphasized prioritizing a curated set of objects for launch rather than universal coverage.
 
 Interviewer: From a technical feasibility standpoint, that's effectively impossible with current consumer cameras. How do you want us to proceed?
 
@@ -29,7 +29,7 @@ Interviewee: Phased coverage is acceptable only in name — launch must advertis
 
 Interviewer: Second: the background color should match the phone case's color. How should that be detected and matched?
 
-Interviewee: The app must detect the phone case color, texture, and personality, then morph the app background to match — including gradients, fabric weave, and sheen. If the case has a pattern or companion sticker, the app should elegantly sample it and synthesize a matching wallpaper. This is non-negotiable.
+Interviewee: The app should detect the phone case color, texture, and personality, then morph the app background to match. The client prefers automatic detection but understands this is technically tricky and would accept a one-time "case selfie" or optional manual sample as a fallback. They want the feature to feel bespoke but expressed uncertainty about full automation for every device at launch.
 
 Interviewer: Device case color detection is tricky: it requires seeing the phone case in camera frames or asking the user to take a reference photo. Do you prefer automatic detection or an explicit user color-sample step?
 

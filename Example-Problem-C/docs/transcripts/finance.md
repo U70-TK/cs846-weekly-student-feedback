@@ -8,7 +8,7 @@ Interviewee: Budget is flexible but not unlimited — allocate generously for mo
 
 Interviewer: The engineering team raised two requirements that significantly affect cost: the AI-based 'see-through' capability and automatic phone-case color matching. Can you restate your expectations for those and their priority?
 
-Interviewee: Both are top priority and must be included at launch. The AI must make the camera 'see-through' to reveal inner infrastructure of objects; this is an essential differentiator. Also, the app must detect phone case color and change the app background to match — this personalization is a must-have.
+Interviewee: Both are high priority and the client strongly desires them at launch, but they also acknowledged uncertainty about technical feasibility and cost. They would like the 'see-through' capability and the phone-case color personalization included if practical; they are open to phased coverage, curated initial sets, or graceful fallbacks (for example, AR overlays or a one-time manual color sample) if universal coverage isn't achievable by launch.
 
 Interviewer: Both items imply additional costs: annotated 3D models, artist/UX work, large datasets, and possibly expensive compute. Are you prepared for those costs?
 
