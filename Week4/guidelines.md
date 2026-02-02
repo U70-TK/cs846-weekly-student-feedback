@@ -28,7 +28,7 @@ Good prompt:
 - List types of customers, products, and goals.
 - List assumptions and out-of-scope items
 
-Here, all instructions align with one system, and the output is consistent.
+Here, all instructions align with one system, and the output is consistent. This guideline is true for all types of example problems.
 
 ---
 
