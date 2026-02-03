@@ -69,6 +69,8 @@ You are working as a requirements engineer on a mobile app, WikiLens, which util
 
 5. **Acceptance Criteria** - Use a different chat, define a sequence of step-by-step paths the user would navigate from the initial given state of the app to the desired outcome of each user story.
 
+...
+
 ---
 
 ### 2. Guidelines that didn't work
