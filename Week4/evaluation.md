@@ -6,7 +6,7 @@
 
 ### Problem A_1: Requirement Validation, Risk, and Missing NFRs (privacy, compliance, and accessibility) check
 
-**Example Bad Solution without guideline**
+**Example Bad Solution guideline 1 provided in the class**
 
 ## Sources
 - Stakeholder interview transcripts in Exercise_A/docs/transcripts:
