@@ -8,7 +8,7 @@
 
 ## Example Problems
 
-### Problem A_1: Requirement Validation, Risk, and Missing NFRs (privacy, compliance, and accessibility) check
+### Problem A_1: Requirement Validation, Risk, and Missing NFRs (privacy, compliance, and accessibility) check.
 
 **Task Description:** Summarize the key points from each stakeholder interview, and identify which requirements are ambiguous or inconsistent, and what targeted follow-up questions they should ask.
 
@@ -142,7 +142,7 @@ You are working as a requirements engineer on a mobile app, WikiLens, which util
 
 #### Guideline 9: Avoid yes/no without explanation
 
-**Prompt and Context:**
+**Prompt and Context:**  
 
 You are a requirements engineer. Classify each of the four requirements (R1–R4) in `artifacts/requirements_R1-R4.md` as **F** (Functional) or **N** (Non‑Functional). For each requirement, provide a 1–2 sentence justification — do NOT give only F or N without explanation. Treat your output as a draft for human review.
 
@@ -176,7 +176,7 @@ Justifications
 
 #### Guideline 1:  Use Different Chats for Different Contexts. Design a structured context prompt, but avoid using the same prompt for different context problems.
 
-**Prompt and Context:** [We opened a completely new chat.] 
+**Prompt and Context:** [We opened a completely new chat.] You are a requirement engineer. Read all the documents `artifacts/docs` (inlcuding all the interview transcripts). Identify requirements that are ambiguous, incomplete or internally inconsistent with each stakeholders. Identify the cross stakeholder conflicts, and for each stakeholder proposes targeted follow-up questions and split them into functional and non-functional questions. provide a human interpretation.
 
 **Task:** Summarize the key points from each stakeholder interview, and identify which requirements are ambiguous or inconsistent, and what targeted follow-up questions they should ask.
 
