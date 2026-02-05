@@ -1,4 +1,4 @@
-# Week 5 Feedback: Code Comprehension
+# Week 5 Feedback: Code Summarization / Comprehension
 
 **Authors:** [Neel Sanjaybhai Faganiya, Ibrahim Mohammed Sayem, Felix Wang]
 
