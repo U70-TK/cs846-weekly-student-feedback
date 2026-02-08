@@ -27,6 +27,8 @@ The code for this task and its related files can be found in the `artifacts` fol
 
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example/Week5
 
+Find the related project in the `Week5/artifacts/medical_reasoning_SFT/` folder. 
+
 
 **Task Description:**
 
@@ -82,7 +84,7 @@ The code for this task and its related files can be found in the `artifacts` fol
 
 ---
 
-#### Guideline : 
+#### Guideline 3: Provide a Documentation Template for the Summary
 
 **Prompt and Context:** 
 
