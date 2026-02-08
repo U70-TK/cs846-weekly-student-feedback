@@ -10,7 +10,7 @@ Contents
 --------
 - `train.py` — helper script to list configs and run training or preprocessing.
 - `axolotl_configs/` — YAML configs for supported base models.
-- `axolotl_datasets/` — prepared datasets (empty in this repo; update with your local data or prepared datasets).
+- `axolotl_datasets/` — prepared datasets.
 
 Quickstart
 ----------
@@ -29,7 +29,3 @@ Quickstart
 License & Attribution
 ---------------------
 Refer to individual component licenses (base models, Axolotl, datasets) when redistributing or publishing results.
-
-Questions
----------
-If you want, I can extend this README with environment-specific setup (CUDA/cuDNN notes, exact dependency versions), or add example CLI commands for running on a Slurm/cluster environment.

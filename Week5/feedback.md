@@ -23,16 +23,17 @@ The code for this task and its related files can be found in the `artifacts` fol
 
 ---
 
-### Problem B: 
+### Problem B: Config-Intensive Code Documentation
 
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example/Week5
 
-Find the related project in the `Week5/artifacts/medical_reasoning_SFT/` folder. 
-
-
 **Task Description:**
 
+Document the ``main.py`` file in the provided project repository. This function is the main function of the ``medical_reasoning_SFT`` project, which calls an open source LLM Supervised Fine-tuning framework `axolotl` on the `OpenMed/Medical-Reasoning-SFT-Trinity-Mini` dataset using LoRA adapters. Your task is to create documentation that explains what the function does, and/or any necessary technical details for the developers. 
+
 **Starter Code:**
+
+Find the related project in the `Week5/artifacts/medical_reasoning_SFT/` folder. Consider providing a documentation template for the summary. 
 
 ---
 
