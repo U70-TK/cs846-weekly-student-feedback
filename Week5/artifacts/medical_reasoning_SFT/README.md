@@ -26,40 +26,6 @@ Quickstart
    ```
    (If you plan to use multi-GPU training, install `accelerate` and any device-specific dependencies.)
 
-Usage
------
-- List available configs:
-  ```bash
-  python train.py --list
-  ```
-- Train using a config key:
-  ```bash
-  python train.py --config "llama2-chat/lora-openmed_Trinity-Mini"
-  ```
-- Train using a direct config path:
-  ```bash
-  python train.py --config-path path/to/config.yaml
-  ```
-- Use `accelerate` for multi-GPU:
-  ```bash
-  python train.py --config "..." --accelerate
-  ```
-- To only run preprocessing (no training):
-  ```bash
-  python train.py --config "..." --preprocess-only
-  ```
-- Add `--debug` to enable debug mode.
-
-Notes about configs
--------------------
-- Both provided configs point to the `OpenMed/Medical-Reasoning-SFT-Trinity-Mini` dataset and use LoRA adapters (r=32, alpha=64) with micro batch size 8 and 1000 steps by default.
-- Check each YAML for paths such as `dataset_prepared_path` and `output_dir` and adjust them to match your local filesystem or workspace mount points.
-
-Troubleshooting
----------------
-- If the script complains about a missing command, ensure `axolotl` (and `accelerate` if used) are installed. Example error text suggests `pip install axolotl`.
-- The repository ignores `venv/` in `.gitignore`.
-
 License & Attribution
 ---------------------
 Refer to individual component licenses (base models, Axolotl, datasets) when redistributing or publishing results.
