@@ -154,7 +154,7 @@ def train(args):
     @pre `axolotl` must be installed (and `accelerate` if using `--accelerate`).
     @exceptsafe Basic
     """
-    pass
+    ...
 
 def main():
     """
@@ -169,7 +169,7 @@ def main():
     @pre None
     @exceptsafe Basic
     """
-    pass
+    ...
 ```
 
 **Why this is bad:**
