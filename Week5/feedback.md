@@ -681,9 +681,6 @@ Short-term fixes (priority)
 ...
 
 ---
-...
-
----
 
 ## References
 
@@ -697,6 +694,7 @@ Short-term fixes (priority)
 [5] Sun, Weisong, et al. "Commenting Higher-level Code Unit: Full Code, Reduced Code, or Hierarchical Code Summarization." arXiv preprint arXiv:2503.10737 (2025).
 
 [4] Makharev, Vladimir, and Vladimir Ivanov. "Code Summarization Beyond Function Level." 2025 IEEE/ACM International Workshop on Large Language Models for Code (LLM4Code). IEEE, 2025.
+
 
 
 
