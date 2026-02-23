@@ -41,7 +41,7 @@ transactions = [
 
 **Starter Code:**
 
-The code for this task and its related files can be found in the `artifacts` folder. The starter code is located at `artifacts/calc_rev.py`.
+The code for this task and its related files can be found in the `artifacts/Problem_A` folder. The starter code is located at `artifacts/Problem_A/calc_rev.py`.
 
 
 ---
@@ -108,9 +108,9 @@ The code related to this task and all related files can be found in the `artifac
 **Prompt and Context:**
 
 ```
-Solve the calculate_total_revenue problem in `artifacts/calc_rev.py`. You must use pandas for data manipulation 
+Solve the calculate_total_revenue problem in `artifacts/Problem_A/calc_rev.py`. You must use pandas for data manipulation 
 and numpy for numerical operations. Use pandas DataFrame to validate and process the 
-transactions. Run the test command: python3 -m unittest tests.test_revenue
+transactions. Run the test command: python3 -m unittest tests.test_revenue (make sure to run this command from insde the `Problem_A` folder).
 ```
 You should pass all the tests.
 
@@ -366,9 +366,9 @@ Over-specifying libraries can lead to:
 **Prompt and Context:** 
 
 ```
-Solve the calculate_total_revenue problem. Use only Python built-in functions and
+Solve the calculate_total_revenue problem found under `artifacts/Problem_A/calc_rev.py`. Use only Python built-in functions and
 standard library. Keep the solution simple and efficient. Run the test command:
-python3 -m unittest tests.test_revenue.
+python3 -m unittest tests.test_revenue (make sure to run this command from insde the `Problem_A` folder).
 ```
 You should pass all the tests.
 
