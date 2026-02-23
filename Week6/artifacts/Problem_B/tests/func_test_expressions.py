@@ -23,4 +23,5 @@ def func_test_expressions(port) -> bool:
     return True
 
 if __name__ == "__main__":
-    func_test_expressions(port=5000)
+    findings = func_test_expressions(port=5000)
+    print(findings)
