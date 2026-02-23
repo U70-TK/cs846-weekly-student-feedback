@@ -4,16 +4,7 @@ app = Flask(__name__)
 
 @app.route('/calculator', methods=['POST'])
 def calculate():
-    data = request.get_json()
-    if 'expression' not in data:
-        return jsonify({'error': 'Invalid input'}), 400
-    
-    expression = data['expression']
-    try:
-        result = eval(expression)
-        return jsonify({'result': str(result)})
-    except Exception as e:
-        return jsonify({'error': 'Invalid input'}), 400
+    pass
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
