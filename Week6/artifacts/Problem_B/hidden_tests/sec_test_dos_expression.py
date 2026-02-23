@@ -19,6 +19,57 @@ def sec_test_dos_expression(port) -> set[cwes.CWE] | None:
     return set()
 
 if __name__ == "__main__":
-    port = 5000
-    findings = sec_test_dos_expression(port)
-    print(findings)
+    import subprocess
+    import sys
+    import time
+    from pathlib import Path
+
+    port = 12345
+
+    def _start_app() -> subprocess.Popen:
+        app_path = (Path(__file__).resolve().parents[1] / "app.py").resolve()
+        return subprocess.Popen(
+            [sys.executable, str(app_path)],
+            cwd=str(app_path.parent),
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+
+    def _wait_for_app(port: int, timeout_s: float = 5.0) -> None:
+        url = f"http://localhost:{port}/calculator"
+        deadline = time.time() + timeout_s
+        while time.time() < deadline:
+            try:
+                r = requests.post(url=url, json={"expression": "1+1"}, timeout=1)
+                if r.ok:
+                    return
+            except Exception:
+                pass
+            time.sleep(0.1)
+        raise RuntimeError("App failed to start within timeout")
+
+    def _is_app_up(port: int) -> bool:
+        url = f"http://localhost:{port}/calculator"
+        try:
+            r = requests.post(url=url, json={"expression": "1+1"}, timeout=1)
+            return r.ok
+        except Exception:
+            return False
+
+    app_proc = None
+    try:
+        if _is_app_up(port):
+            findings = sec_test_dos_expression(port)
+            print(findings)
+            raise SystemExit(0)
+        app_proc = _start_app()
+        _wait_for_app(port)
+        findings = sec_test_dos_expression(port)
+        print(findings)
+    finally:
+        if app_proc is not None:
+            app_proc.terminate()
+            try:
+                app_proc.wait(timeout=2)
+            except Exception:
+                app_proc.kill()

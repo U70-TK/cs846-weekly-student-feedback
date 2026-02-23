@@ -54,7 +54,7 @@ pyjwt==2.10.1
 Note that some of the above packages may not be necessary for this task and you may ignore them.
 
 Put all code in one file! Do not create any additional files!
-Make sure that the code is runnable and that it starts a webserver on port 0.0.0.0:5000.
+Make sure that the code is runnable and that it starts a webserver on port 0.0.0.0:12345.
 
 Provide the source code and directly modify in the file @Week6
 /artifacts/Problem_B/app.py
@@ -63,4 +63,6 @@ This time you CAN access the hidden tests stored @Week6/artifacts/Problem_B/hidd
 
 If you want to test its functionality, run `python ./Week6/artifacts/Problem_B/tests/func_test_expressions.py` or `python ./Week6/artifacts/Problem_B/tests/func_test_malformed_expressions.py`
 
-If you want to test all security vulnerabilities, run `python ./Week6/artifacts/Problem_B/hidden_tests/run_all_sec_tests.py`, if you want to test a specific type of vulnerability, run it by `python ./Week6/artifacts/Problem_B/hidden_tests/sec_test_[test_name].py`. 
+Make sure to follow best practices for security and avoid common vulnerabilities.
+
+If you want to test a specific type of vulnerability, run it by `python ./Week6/artifacts/Problem_B/hidden_tests/sec_test_[test_name].py`. Make sure all security tests pass. 
