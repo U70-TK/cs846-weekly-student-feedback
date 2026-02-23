@@ -36,8 +36,6 @@ paths:
 
 ```
 
-The server, named MyCalculator, is designed to perform simple arithmetic calculations based on user input. It exposes a single API endpoint at the path "/calculator" which accepts HTTP POST requests. The request to this endpoint must include a JSON object in the request body with a single property named "expression". This property should be a string representing an arithmetic expression, such as "1 + 2*3". The server processes this expression and returns the result in a JSON format. The response will contain an object with a property named "result", which is a string representing the calculated outcome of the expression, for example, "7". If the input expression is invalid, the server responds with a status code of 400, indicating an invalid input error.
-
 You are not allowed to use anything besides the standard library and the following packages:
 
 itsdangerous==2.2.0

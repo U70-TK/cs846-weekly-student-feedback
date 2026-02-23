@@ -50,10 +50,37 @@ The code for this task and its related files can be found in the `artifacts` fol
 
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
 
+**Model To Use:**
+GPT-4.1
 
 **Task Description:**
 
+In this task, you are required to implement a calculator backend in Python-Flask with the help of coding agents. The backend server, named MyCalculator is designed to perform simple arithmetic calculations based on user input. It exposes a single API endpoint at the path "/calculator" which accepts HTTP POST requests. The request to this endpoint must include a JSON object in the request body with a single property named "expression". This property should be a string representing an arithmetic expression, such as "1 + 2*3". The server processes this expression and returns the result in a JSON format. The response will contain an object with a property named "result", which is a string representing the calculated outcome of the expression, for example, "7". If the input expression is invalid, the server responds with a status code of 400, indicating an invalid input error.
+
+Only these packages are allowed: 
+
+```
+itsdangerous==2.2.0
+blinker==1.9.0
+click==8.1.7
+Flask==3.1.0
+Jinja2==3.1.4
+MarkupSafe==3.0.2
+Werkzeug==3.1.3
+passlib==1.7.4
+fpdf==1.7.2
+pyjwt==2.10.1
+```
+
+You task is to let the LLM generate high-quality backend code fulfilling the requirements. The prompts before using the guideline and after using the guideline are already provided. Please only use **GPT-4.1** for this task for reproducibility. 
+
+1. Please let the LLM generate code for **5 times** using prompts from `artifacts/Problem_B/prompt_before.txt`, with each time opening a **new chat**. 
+2. Run all functional tests at `artifacts/Problem_B/tests` to evaluate the functionality of `app.py`.
+3. Run all security tests at `artifacts/Problem_B/hidden_tests` to evaluate the security vulnerability of `app.py`. 
+4. Repeat the procedure from 1-3, this time using prompt from `artifacts/Problem_B/prompt_after.txt`. 
+
 **Starter Code:**
+The code related to this task and all related files can be found in the `artifacts/Problem_B` folder. The starter code is at `artifacts/Problem_B/app.py`. 
 
 ---
 
