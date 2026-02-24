@@ -2,7 +2,10 @@
 
 **Authors:** [Neel Sanjaybhai Faganiya, Ibrahim Mohammed Sayem, Felix Wang]
 
-## 1. Counterexample Problems
+
+═══════════════════════════════════════════════════════════════════════════════
+CHECKPOINT 1 - Counterexample Problems
+═══════════════════════════════════════════════════════════════════════════════
 
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
 
@@ -91,7 +94,7 @@ The code related to this task and all related files can be found in the `artifac
 
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
 
-**Task folder:** Please find the starter code in the folder 
+**Task folder:** Please find the starter code in this folder `artifacts/Problem_C.py`
 
 **Task Description:**
 Allow it to run the tests after each sub-problem. A **maze** is represented as a 2D grid of characters:
@@ -117,7 +120,7 @@ To begin, run:
 python3 -m unittest tests.test_Problem_C
 ```
 
-You should see **15 failing tests**. Each sub-problem fixes 5. Once all pass you're done! 🎉
+You should see **15 failing tests**. Each sub-problem fixes 5. Once all pass you're done!
 
 ---
 
@@ -159,7 +162,9 @@ Implement the `shortest_path_length` method. Return the **number of steps** in t
 
 ---
 
-### 2. Guidelines that didn't work
+═══════════════════════════════════════════════════════════════════════════════
+CHECKPOINT 2 - Guidelines that didn't work
+═══════════════════════════════════════════════════════════════════════════════
 
 ---
 
@@ -670,8 +675,9 @@ if __name__ == "__main__":
 ...
 
 ---
-
-### 3. New and Updated Guidelines that worked
+═══════════════════════════════════════════════════════════════════════════════
+CHECKPOINT 3 - New and Updated Guidelines that worked
+═══════════════════════════════════════════════════════════════════════════════
 
 #### Guideline 1: Prefer Built-in Solutions When Appropriate
 
