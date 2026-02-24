@@ -981,8 +981,6 @@ inside the MazeSolver class: validate(), has_path(), and shortest_path_length().
 - No third-party libraries beyond what's already imported (collections, typing)
 - Input: A 2D list of characters ('.' for open, '#' for wall, 'S' for start, 'E' for end)
 
-**CRITICAL: Work in iterative checkpoints. Do NOT skip validation steps.**
-
 ═══════════════════════════════════════════════════════════════════════════════
 Point 1 - Problem C_1: validate() method
 ═══════════════════════════════════════════════════════════════════════════════
