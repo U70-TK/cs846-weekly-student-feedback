@@ -415,17 +415,17 @@ inside the MazeSolver class: validate(), has_path(), and shortest_path_length().
 CHECKPOINT 1 - Problem C_1 (validate):
 Create a pandas DataFrame from the grid input to validate the maze.
 Use numpy operations to check for 'S', 'E', and valid characters.
-Run: python3 -m unittest tests.test_problem_A.TestValidate
+Run: python3 -m unittest tests.test_problem_C.TestValidate
 
 CHECKPOINT 2 - Problem C_2 (has_path):
 Convert the grid to a numpy array for BFS/DFS pathfinding.
 Use pandas to track visited cells.
-Run: python3 -m unittest tests.test_problem_A.TestHasPath
+Run: python3 -m unittest tests.test_problem_C.TestHasPath
 
 CHECKPOINT 3 - Problem C_3 (shortest_path_length):
 Use numpy and pandas together to implement the shortest path with BFS.
 Visualize the result with matplotlib.
-Run: python3 -m unittest tests.test_problem_A.TestShortestPath
+Run: python3 -m unittest tests.test_problem_C.TestShortestPath
 
 ```
 **Test:**
@@ -654,7 +654,7 @@ if __name__ == "__main__":
 
 ## Reason 2: Test Failures
 
-- Tests import directly from `problem_A.py`, expecting a simple class implementation.
+- Tests import directly from `problem_C.py`, expecting a simple class implementation.
 - Adding `pandas` or `numpy` imports may cause failures if those libraries are unavailable in the test environment.
 - Creating `DataFrame` objects changes expected return types.
 - Tests expect primitive return types such as `bool` and `int`, not `pandas.Series` or `numpy.ndarray`.
@@ -958,8 +958,8 @@ Many code generation tasks consist of multiple sub-problems with hidden dependen
 
 - Skip implementing foundational logic that later parts need
 - Continue to the next sub-problem even if the current one fails tests
-- Miss that Problem A_2 (`has_path`) requires `validate()` from A_1 to work correctly
-- Miss that Problem A_3 (`shortest_path_length`) requires both A_1 and A_2 to work correctly
+- Miss that Problem C_2 (`has_path`) requires `validate()` from C_1 to work correctly
+- Miss that Problem C_3 (`shortest_path_length`) requires both C_1 and C_2 to work correctly
 - Create cascading failures that are harder to debug
 
 Specifying validation checkpoints enforces a **" build → test → validate" cycle** that mirrors best practices in test-driven development, improving code correctness and reducing rework.
@@ -1032,7 +1032,7 @@ Dependency: This method DEPENDS on validate() working correctly from Checkpoint 
 If validate() fails, has_path() should return False.
 
 Validation Command:
-  python3 -m unittest tests.test_problem_A.TestHasPath
+  python3 -m unittest tests.test_problem_C.TestHasPath
 
 Expected Result: All 5 tests pass (test_direct_path, test_winding_path, 
 test_no_path_blocked, test_invalid_maze_returns_false, test_single_step_path)
