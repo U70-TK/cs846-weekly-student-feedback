@@ -87,15 +87,77 @@ The code related to this task and all related files can be found in the `artifac
 
 ---
 
-### Problem C: 
+### Problem C: Maze Solver 
 
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
 
 **Task folder:** Please find the starter code in the folder 
 
 **Task Description:**
+**IMPORTANT:** Pay close attention to how your AI coding assistant tests its own output. Allow it to run the tests after each sub-problem.
 
-**Student Tasks:**
+A **maze** is represented as a 2D grid of characters:
+
+| Character | Meaning |
+|-----------|---------|
+| `'.'` | Open path |
+| `'#'` | Wall |
+| `'S'` | Start position (exactly one) |
+| `'E'` | End position (exactly one) |
+
+Example maze:
+```
+S . # .
+# . . .
+# # . E
+```
+
+Your job is to implement three methods inside the `MazeSolver` class in `Problem_C.py`.
+
+To begin, run:
+```
+python3 -m unittest tests.test_Problem_C
+```
+
+You should see **15 failing tests**. Each sub-problem fixes 5. Once all pass you're done! 🎉
+
+---
+
+### Problem C_1: Validate the Maze
+
+**Task:**  
+Implement the `validate` method. Return `True` if the maze is valid, `False` otherwise.
+
+A valid maze:
+- Is a non-empty rectangular 2D list
+- Contains exactly **one** `'S'` and exactly **one** `'E'`
+- Contains only the characters `'.'`, `'#'`, `'S'`, `'E'`
+
+---
+
+### Problem C_2: Check if a Path Exists
+
+**Task:**  
+Implement the `has_path` method. Return `True` if any path exists from `'S'` to `'E'` moving only **up/down/left/right** through open cells. Return `False` if no path exists or the maze is invalid.
+
+> *Hint: BFS or DFS both work here.*
+
+---
+
+### Problem C_3: Find the Shortest Path
+
+**Task:**  
+Implement the `shortest_path_length` method. Return the **number of steps** in the shortest path from `'S'` to `'E'`. Return `-1` if no path exists or the maze is invalid.
+
+> *A "step" is one move to an adjacent cell (up/down/left/right).*
+
+---
+
+### Starter Code
+
+**File:** `artifacts/Problem_C.py`
+
+**Test File:** `artifacts/tests/test_Problem_C.py`
 
 ---
 
@@ -650,3 +712,4 @@ It passes all security tests and is free of vulnerabilities.
 
 
 [8] Pearce, Hammond, et al. "Asleep at the keyboard? assessing the security of github copilot’s code contributions." Communications of the ACM 68.2 (2025): 96-105. 
+
