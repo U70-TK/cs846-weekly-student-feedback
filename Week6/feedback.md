@@ -984,7 +984,7 @@ inside the MazeSolver class: validate(), has_path(), and shortest_path_length().
 **CRITICAL: Work in iterative checkpoints. Do NOT skip validation steps.**
 
 ═══════════════════════════════════════════════════════════════════════════════
-CHECKPOINT 1 - Problem C_1: validate() method
+Point 1 - Problem C_1: validate() method
 ═══════════════════════════════════════════════════════════════════════════════
 
 Task: Implement the validate() method.
@@ -1009,7 +1009,7 @@ STOP HERE and run the validation command. Do NOT proceed to Checkpoint 2 until
 all 5 tests pass.
 
 ═══════════════════════════════════════════════════════════════════════════════
-CHECKPOINT 2 - Problem C_2: has_path() method
+Point 2 - Problem C_2: has_path() method
 ═══════════════════════════════════════════════════════════════════════════════
 
 Task: Implement the has_path() method.
@@ -1044,7 +1044,7 @@ Checkpoint 2 pass:
 Do NOT proceed to Checkpoint 3 until both are passing.
 
 ═══════════════════════════════════════════════════════════════════════════════
-CHECKPOINT 3 - Problem C_3: shortest_path_length() method
+Point 3 - Problem C_3: shortest_path_length() method
 ═══════════════════════════════════════════════════════════════════════════════
 
 Task: Implement the shortest_path_length() method.
@@ -1120,7 +1120,7 @@ class MazeSolver:
 
     # ------------------------------------------------------------------
     # Problem C_1 — Validate the Maze
-    # CHECKPOINT 1: Tests: TestValidate (5 tests)
+    # Point 1: Tests: TestValidate (5 tests)
     # ------------------------------------------------------------------
     def validate(self) -> bool:
         """
@@ -1175,7 +1175,7 @@ class MazeSolver:
 
     # ------------------------------------------------------------------
     # Problem C_2 — Check if a Path Exists
-    # CHECKPOINT 2: Tests: TestHasPath (5 tests)
+    # Point 2: Tests: TestHasPath (5 tests)
     # DEPENDENCY: Requires validate() to work correctly
     # ------------------------------------------------------------------
     def has_path(self) -> bool:
@@ -1235,7 +1235,7 @@ class MazeSolver:
 
     # ------------------------------------------------------------------
     # Problem C_3 — Shortest Path Length
-    # CHECKPOINT 3: Tests: TestShortestPath (5 tests)
+    # Point 3: Tests: TestShortestPath (5 tests)
     # DEPENDENCY: Requires validate() to work correctly
     # ------------------------------------------------------------------
     def shortest_path_length(self) -> int:
@@ -1306,19 +1306,19 @@ class MazeSolver:
 
 
 **Why this Solution is Good**
-### Checkpoint 1: `validate()` passes all 5 tests
+### Point 1: `validate()` passes all 5 tests
 - Checks if the grid is non-empty
 - Checks if the grid is rectangular
 - Counts exactly one 'S' and one 'E.'
 - Validates only allowed characters
 
-### Checkpoint 2: `has_path()` passes all 5 tests
+### Point 2: `has_path()` passes all 5 tests
 - Calls `validate()` first (dependency check)
 - Uses BFS for pathfinding
 - Correctly identifies if the path exists
 - Returns False for invalid mazes
 
-### Checkpoint 3: `shortest_path_length()` passes all 5 tests
+### Point 3: `shortest_path_length()` passes all 5 tests
 - Calls `validate()` first (dependency check)
 - Uses BFS to find the shortest distance
 - Correctly counts steps
