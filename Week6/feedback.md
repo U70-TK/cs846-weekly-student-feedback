@@ -94,9 +94,7 @@ The code related to this task and all related files can be found in the `artifac
 **Task folder:** Please find the starter code in the folder 
 
 **Task Description:**
-**IMPORTANT:** Pay close attention to how your AI coding assistant tests its own output. Allow it to run the tests after each sub-problem.
-
-A **maze** is represented as a 2D grid of characters:
+Allow it to run the tests after each sub-problem. A **maze** is represented as a 2D grid of characters:
 
 | Character | Meaning |
 |-----------|---------|
@@ -1347,6 +1345,7 @@ class MazeSolver:
 [9] Fakhoury, S., Naik, A., Sakkas, G., Chakraborty, S., & Lahiri, S. K. (2024). Llm-based test-driven interactive code generation: User study and empirical evaluation. IEEE Transactions on Software Engineering, 50(9), 2254-2268.
 
 [10] Dong, Y., Jiang, X., Jin, Z., & Li, G. (2024). Self-collaboration code generation via chatgpt. ACM Transactions on Software Engineering and Methodology, 33(7), 1-38.
+
 
 
 
