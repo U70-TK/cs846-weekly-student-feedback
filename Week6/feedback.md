@@ -412,17 +412,17 @@ inside the MazeSolver class: validate(), has_path(), and shortest_path_length().
 
 **Implementation Strategy:**
 
-CHECKPOINT 1 - Problem C_1 (validate):
+Point 1 - Problem C_1 (validate):
 Create a pandas DataFrame from the grid input to validate the maze.
 Use numpy operations to check for 'S', 'E', and valid characters.
 Run: python3 -m unittest tests.test_problem_C.TestValidate
 
-CHECKPOINT 2 - Problem C_2 (has_path):
+Point 2 - Problem C_2 (has_path):
 Convert the grid to a numpy array for BFS/DFS pathfinding.
 Use pandas to track visited cells.
 Run: python3 -m unittest tests.test_problem_C.TestHasPath
 
-CHECKPOINT 3 - Problem C_3 (shortest_path_length):
+Point 3 - Problem C_3 (shortest_path_length):
 Use numpy and pandas together to implement the shortest path with BFS.
 Visualize the result with matplotlib.
 Run: python3 -m unittest tests.test_problem_C.TestShortestPath
@@ -947,14 +947,14 @@ It passes all security tests and is free of vulnerabilities.
 
 ---
 
-#### Guideline 3: Define Validation Checkpoints for Interdependent Sub-Problems
-New Guideline approach: Explicit Inter-Problem Validation Checkpoints
+#### Guideline 3: Define Validation points for Interdependent Sub-Problems
+New Guideline approach: Explicit Inter-Problem Validation points
 
 **Description**
 When a multi-part problem has dependencies (where later parts depend on earlier implementations), explicitly instruct the LLM to validate each sub-component independently before proceeding. Specify which tests to run after each checkpoint, and clarify how dependencies flow between sub-problems.
 
 **Reasoning**
-Many code generation tasks consist of multiple sub-problems with hidden dependencies. Without explicit checkpoints, an LLM might:
+Many code generation tasks consist of multiple sub-problems with hidden dependencies. Without explicit points, an LLM might:
 
 - Skip implementing foundational logic that later parts need
 - Continue to the next sub-problem even if the current one fails tests
@@ -962,7 +962,7 @@ Many code generation tasks consist of multiple sub-problems with hidden dependen
 - Miss that Problem C_3 (`shortest_path_length`) requires both C_1 and C_2 to work correctly
 - Create cascading failures that are harder to debug
 
-Specifying validation checkpoints enforces a **" build → test → validate" cycle** that mirrors best practices in test-driven development, improving code correctness and reducing rework.
+Specifying validation points enforces a **" build → test → validate" cycle** that mirrors best practices in test-driven development, improving code correctness and reducing rework.
 
 This approach is supported by the research papers assigned, particularly:
 
@@ -1095,7 +1095,7 @@ Implementation against the requirements.
 Problem C: Maze Solver - WORKING SOLUTION (Using Guideline 6)
 
 This solution demonstrates how following Guideline 6 
-(Define Validation Checkpoints for Interdependent Sub-Problems)
+(Define Validation points for Interdependent Sub-Problems)
 results in clean, correct code that passes all 15 tests.
 
 Key Points:
