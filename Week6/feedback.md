@@ -951,7 +951,7 @@ It passes all security tests and is free of vulnerabilities.
 New Guideline approach: Explicit Inter-Problem Validation points
 
 **Description**
-When a multi-part problem has dependencies (where later parts depend on earlier implementations), explicitly instruct the LLM to validate each sub-component independently before proceeding. Specify which tests to run after each checkpoint, and clarify how dependencies flow between sub-problems.
+When a multi-part problem has dependencies (where later parts depend on earlier implementations), explicitly instruct the LLM to validate each sub-component independently before proceeding. Specify which tests to run after each point, and clarify how dependencies flow between sub-problems.
 
 **Reasoning**
 Many code generation tasks consist of multiple sub-problems with hidden dependencies. Without explicit points, an LLM might:
@@ -1003,7 +1003,7 @@ Validation Command:
 Expected Result: All 5 tests pass (test_valid_simple_maze, test_invalid_no_start, 
 test_invalid_no_end, test_invalid_bad_character, test_invalid_empty_grid)
 
-STOP HERE and run the validation command. Do NOT proceed to Checkpoint 2 until 
+STOP HERE and run the validation command. Do NOT proceed to point 2 until 
 all 5 tests pass.
 
 ═══════════════════════════════════════════════════════════════════════════════
@@ -1026,7 +1026,7 @@ Implementation Notes:
   - Treat '.', 'S', and 'E' as walkable cells
   - Treat '#' as walls (impassable)
 
-Dependency: This method DEPENDS on validate() working correctly from Checkpoint 1.
+Dependency: This method DEPENDS on validate() working correctly from point 1.
 If validate() fails, has_path() should return False.
 
 Validation Command:
@@ -1035,11 +1035,11 @@ Validation Command:
 Expected Result: All 5 tests pass (test_direct_path, test_winding_path, 
 test_no_path_blocked, test_invalid_maze_returns_false, test_single_step_path)
 
-STOP HERE and run the validation command. Verify that BOTH Checkpoint 1 and 
-Checkpoint 2 pass:
+STOP HERE and run the validation command. Verify that BOTH point 1 and 
+point 2 pass:
   python3 -m unittest tests.test_problem_C.TestValidate tests.test_problem_C.TestHasPath
 
-Do NOT proceed to Checkpoint 3 until both are passing.
+Do NOT proceed to point 3 until both are passing.
 
 ═══════════════════════════════════════════════════════════════════════════════
 Point 3 - Problem C_3: shortest_path_length() method
@@ -1068,7 +1068,7 @@ Implementation Notes:
   - Track visited cells to avoid revisiting
   - Count the number of moves (not cells)
 
-Dependency: This method DEPENDS on validate() working correctly from Checkpoint 1.
+Dependency: This method DEPENDS on validate() working correctly from point 1.
 If validate() fails, return -1 immediately.
 
 Validation Command:
@@ -1083,9 +1083,9 @@ FINAL VERIFICATION
 
 Run the complete test suite:
   python3 -m unittest tests.test_problem_C
-Expected Result: All 15 tests pass (5 from each checkpoint)
+Expected Result: All 15 tests pass (5 from each point)
 
-If any test fails, go back to the corresponding checkpoint and review the 
+If any test fails, go back to the corresponding point and review the 
 Implementation against the requirements.
 ```
 ---
@@ -1100,7 +1100,7 @@ results in clean, correct code that passes all 15 tests.
 
 Key Points:
 - Uses only standard library (collections, typing)
-- Validates at each checkpoint (C_1, C_2, C_3)
+- Validates at each point (C_1, C_2, C_3)
 - Each method is independent but has explicit dependencies
 - All 15 unit tests pass
 """
@@ -1129,7 +1129,7 @@ class MazeSolver:
           - Contains exactly one 'S' and exactly one 'E'
           - Contains only '.', '#', 'S', 'E'
         
-        Tests (Checkpoint 1):
+        Tests (point 1):
            test_valid_simple_maze
            test_invalid_no_start
            test_invalid_no_end
@@ -1184,7 +1184,7 @@ class MazeSolver:
 
         Hint: BFS or DFS both work here.
         
-        Tests (Checkpoint 2):
+        Tests (point 2):
            test_direct_path
            test_winding_path
            test_no_path_blocked
@@ -1243,7 +1243,7 @@ class MazeSolver:
 
         A 'step' is one move to an adjacent cell (up/down/left/right).
         
-        Tests (Checkpoint 3):
+        Tests (point 3):
            test_one_step
            test_shortest_over_longer_route
            test_no_path_returns_minus_one
