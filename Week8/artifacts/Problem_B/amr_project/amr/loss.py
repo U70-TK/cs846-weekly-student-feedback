@@ -23,15 +23,21 @@ class AMRLoss(torch.nn.Module):
         super().__init__()
         self.cfg = cfg
 
+    @staticmethod
+    def _target_direction(z: torch.Tensor) -> torch.Tensor:
+        # AMR interprets the scalar target as a direction along the first basis vector.
+        e1 = torch.zeros_like(z)
+        e1[:, 0] = 1.0
+        return e1
+
     def forward(self, z: torch.Tensor, y: torch.Tensor) -> torch.Tensor:
         # z: [B, D], y: [B, 1]
         # Normalize targets into [-1, 1] and map to angle
         y_clamped = y.clamp(-1.0, 1.0)
         theta = torch.acos(y_clamped)
 
-        # cosine similarity between z and a fixed direction e1
-        e1 = torch.zeros_like(z)
-        e1[:, 0] = 1.0
+        # cosine similarity between z and a fixed direction
+        e1 = self._target_direction(z)
         cos_sim = (z * e1).sum(dim=1, keepdim=True)
 
         # angular margin penalty

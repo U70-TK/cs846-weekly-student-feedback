@@ -30,6 +30,7 @@ class Trainer:
             x = x.to(self.train_cfg.device)
             y = y.to(self.train_cfg.device)
             z, y_hat = self.model(x)
+            # y_hat is kept for optional logging/analysis; AMR uses z directly.
             loss = self.loss_fn(z, y)
             self.optim.zero_grad()
             loss.backward()
