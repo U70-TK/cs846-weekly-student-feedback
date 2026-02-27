@@ -31,7 +31,7 @@ python3 tests/validate.py  # check your fixes — all 10 checks must PASS
 ## Expected Output (post-fix)
 
 ```
-── Report Complete ───────────────────────────────────
+Report Complete
    Overdue/late checkouts : 7
    Still unreturned       : 3
    Total fees owed        : $8.75
