@@ -77,7 +77,7 @@ Using Copilot Chat (GPT-4.1), review the logic of each flagged function, identif
 Total fees owed  : $8.75
 Genres tracked   : 7
 
----
+
 
 ### 2. Guidelines that didn't work
 
