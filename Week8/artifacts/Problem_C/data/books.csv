@@ -1,0 +1,11 @@
+book_id,title,author,genre,year,copies_total,copies_checked_out
+B001,The Pragmatic Programmer,David Thomas,Technology,1999,5,2
+B002,Clean Code,Robert Martin,Technology,2008,3,3
+B003,Dune,Frank Herbert,Science Fiction,1965,4,1
+B004,1984,George Orwell,Fiction,1949,6,6
+B005,Sapiens,Yuval Noah Harari,History,2011,2,0
+B006,The Great Gatsby,F. Scott Fitzgerald,Fiction,1925,3,1
+B007,Python Crash Course,Eric Matthes,Technology,2019,4,2
+B008,Educated,Tara Westover,Memoir,2018,5,4
+B009,Atomic Habits,James Clear,Self-Help,2018,3,1
+B010,The Hobbit,J.R.R. Tolkien,Fantasy,2019,7,7

@@ -37,6 +37,24 @@ The code for this task and its related files can be found in the `artifacts/Prob
 ---
 
 ### Problem C: 
+You are given a small Python reporting pipeline used by a public library to track book inventory and member checkouts. The system loads data from two CSV files (`books.csv`, `checkouts.csv`), derives key metrics, and produces three JSON
+reports consumed by the library's front-desk dashboard.
+
+The pipeline consists of two modules driven by `main.py`:
+
+```
+Stage 1 → tracker/loader.py - Ingest CSV files; derive computed fields per record
+Stage 2 → tracker/reports.py  - Compute late fees, genre availability, top books
+```
+
+Input data in `data/`: [All the generated using ChatGPT]
+
+| File | Contents |
+|---|---|
+| `data/books.csv` | 10 books across 7 genres with copy counts |
+| `data/checkouts.csv` | 12 checkout records with dates, return status, and fee rate |
+
+---
 
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
 
