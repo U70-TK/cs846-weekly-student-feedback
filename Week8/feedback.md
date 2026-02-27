@@ -478,12 +478,12 @@ For each suspicious function, instruct the model to apply a structured three ste
 2. **Predict:** trace through the current implementation everyline and state what it *actually* computes, using concrete example values.
 3. **Conclude:**compare the intended and actual results; if they diverge, propose the minimal fix (one to two tokens) that closes the gap.
 
-This loop is directly adapted from AutoSD's Hypothesize|Observe|Conclude pipeline (Kang et al., 2025), translated from runtime debugging into static code reading. Because Problem C's bugs produce no exceptions, the "Observe" step of the original AutoSD is replaced by a manual trace through the formula where a technique Goedecke (2025) calls*structural code review*: bring in the semantic intent of the function as context, not just the diff. Arsturn (2025) further reinforces this: AI is reliable on the happy path but misses cases where the formula is logically inverted or directionally reversed, exactly the bug category present in C.
+This loop is directly adapted from AutoSD's Hypothesize|Observe|Conclude pipeline [2], translated from runtime debugging into static code reading. Because Problem C's bugs produce no exceptions, the "Observe" step of the original AutoSD is replaced by a manual trace through the formula where a technique Goedecke [3] calls*structural code review*: bring in the semantic intent of the function as context, not just the diff. Arsturn [4] further reinforces this: AI is reliable on the happy path but misses cases where the formula is logically inverted or directionally reversed, exactly the bug category present in C.
 
 **Reasoning**
 
 All three bugs in C are *silent semantic errors*, the pipeline exits with code 0 and produces plausible looking JSON, but every arithmetic result is wrong. There is no stack trace, no assertion error, and no immediately visible anomaly without reading the formula carefully. The Scientific Hypothesis approach forces the model to reason about *intent vs. implementation* for each function in isolation, which is precisely the gap that causes these bugs to survive cursory review. Kang et al. demonstrate that even without runtime
-execution, structured hypothesis generation significantly improves the accuracy of LLM bug localization when the model is forced to commit to a concrete prediction before comparing it against the code. Breiding (2025) corroborates this: AI code reviewers must explicitly validate business logic in C, the "business logic" is the arithmetic formula documented in each function's docstring.
+execution, structured hypothesis generation significantly improves the accuracy of LLM bug localization when the model is forced to commit to a concrete prediction before comparing it against the code. Breiding [5] corroborates this: AI code reviewers must explicitly validate business logic in C, the "business logic" is the arithmetic formula documented in each function's docstring.
 
 **Prompt and Context:**
 
@@ -558,3 +558,11 @@ Result: [PASS] 10/10 checks passed
 ## References
 
 [1] Sharma, Mrinank, et al. "Towards Understanding Sycophancy in Language Models." The Twelfth International Conference on Learning Representations. 2024.
+
+[2] Kang, Sungmin, et al. "Explainable automated debugging via large language model-driven scientific debugging." Empirical Software Engineering 30.2 (2025): 45.
+
+[3] Goedecke, S. (2025). If you are good at code review, you will be good at using AI agents. seangoedecke.com. https://www.seangoedecke.com/ai-agents-and-code-review/
+
+[4] Saadioui, Z. (2025). The essential guide to reviewing AI-generated code. Arsturn Blog. https://www.arsturn.com/blog/the-essential-guide-to-reviewing-ai-generated-code
+
+[5] Breiding, W. (2025). Developer and AI code reviewer: Reviewing AI-generated code in .NET. Microsoft .NET Blog. https://devblogs.microsoft.com/dotnet/developer-and-ai-code-reviewer-reviewing-ai-generated-code-in-dotnet/
