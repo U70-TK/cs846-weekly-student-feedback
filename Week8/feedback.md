@@ -188,3 +188,6 @@ The model is instructed to start at the **failure trigger** (the `/webhook` hand
 
 ---
 
+## References
+
+[1] Sharma, Mrinank, et al. "Towards Understanding Sycophancy in Language Models." The Twelfth International Conference on Learning Representations. 2024.
