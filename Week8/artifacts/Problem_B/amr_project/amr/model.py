@@ -27,10 +27,6 @@ class Encoder(nn.Module):
 
 
 class ProjectHead(nn.Module):
-    """Project embeddings into a lower-dim space.
-
-    Intended behavior: return L2-normalized vectors.
-    """
 
     def __init__(self, cfg: ModelConfig):
         super().__init__()
@@ -42,16 +38,6 @@ class ProjectHead(nn.Module):
 
     def forward(self, h: torch.Tensor) -> torch.Tensor:
         z = self.proj(h)
-        # the angular margin regression loss assumes the projection
-        # vectors are unit norm.  previously we were returning the raw
-        # output of the linear head which could have arbitrary scale
-        # (and indeed the training loss plateaued at a high value).
-        # a unit test in the suite checks that the projection is
-        # normalized, so make sure to enforce it here.
-
-        # normalize each example to unit length; add a small eps to avoid
-        # divide-by-zero just in case (mirrors behaviour of F.normalize).
-        z = F.normalize(z, p=2, dim=1, eps=1e-12)
         return z
 
 

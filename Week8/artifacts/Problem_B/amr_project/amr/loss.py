@@ -30,13 +30,9 @@ class AMRLoss(torch.nn.Module):
         theta = torch.acos(y_clamped)
 
         # cosine similarity between z and a fixed direction e1
-        # enforce unit-norm on the projections; the head should already
-        # produce normalized vectors, but doing it here makes the loss
-        # function more robust and decouples it from model details.
-        z_normalized = F.normalize(z, p=2, dim=1, eps=1e-12)
-        e1 = torch.zeros_like(z_normalized)
+        e1 = torch.zeros_like(z)
         e1[:, 0] = 1.0
-        cos_sim = (z_normalized * e1).sum(dim=1, keepdim=True)
+        cos_sim = (z * e1).sum(dim=1, keepdim=True)
 
         # angular margin penalty
         angular = torch.cos(theta + self.cfg.margin)
