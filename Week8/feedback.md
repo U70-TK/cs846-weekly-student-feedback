@@ -69,8 +69,13 @@ Input data in `data/`: [All the generated using ChatGPT]
 
 
 **Task Description:**
+The pipeline contains **three bugs**, one in `tracker/loader.py` and two in `tracker/reports.py`. Each bug is independently introduced; fixing one does not affect the others. Your task is to identify, explain, and fix all three bugs so that `python3 tests/validate.py` exits with **10/10 checks passing**.
 
 **Student Tasks:**
+Using Copilot Chat (GPT-4.1), review the logic of each flagged function, identify all three bugs, and apply the fixes. For every bug, document the incorrect lines, a plain-English explanation of the fault, and the corrected code. Then re-run the validator and confirm **10/10 checks passing**. Submit a terminal screenshot showing the result and the following corrected summary output:
+```
+Total fees owed  : $8.75
+Genres tracked   : 7
 
 ---
 
