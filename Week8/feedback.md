@@ -32,6 +32,9 @@ The code for this task and its related files can be found in the `artifacts/Prob
 **Model to Use:**
 For reproducibility, please use **GPT-4.1** for this task.
 
+**Declaration:**
+The code created by this task is aided by Codex, the bug is manually inserted. 
+
 **Task Description:**
 
 You are given a multi-file PyTorch project that implements a custom Angular Margin Regression (AMR) loss and a projection head. Training converges but the loss plateaus higher than expected, and a unit test about projection normalization fails. Your task is to localize the bug and propose a fix. Point to the specific file and line(s) you would change. 
@@ -106,6 +109,10 @@ The model may never focus on the handler where `None + str` happens, may suggest
 ---
 
 #### Guideline 4: Control Prompt Details
+
+**Declaration:**
+
+The writing in "Why this is bad" section is polished by Codex.
 
 **Prompt and Context:** 
 
@@ -303,6 +310,10 @@ The model is instructed to start at the **failure trigger** (the `/webhook` hand
 ---
 
 #### Guideline 2: Defer to model feasibility checks
+
+**Declaration:**
+
+The writing in this section is polished by Codex.
 
 **Description:**  
 When the solution is not verified, avoid asserting a specific fix. Ask the model to first judge whether the proposed hypothesis is feasible and/or correct, and to justify that decision before suggesting changes.
