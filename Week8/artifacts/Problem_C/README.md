@@ -1,4 +1,4 @@
-# LibraryTracker — Debugging Assignment
+# LibraryTracker: Debugging Assignment
 
 A small Python pipeline that loads library book and checkout data from CSV files, then generates three operational reports: late fee calculations, genre availability summaries, and a most-checked-out ranking.
 
