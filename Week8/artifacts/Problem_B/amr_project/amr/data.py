@@ -21,7 +21,11 @@ class ToyRegressionDataset(Dataset):
         w = torch.randn(cfg.input_dim, generator=g)
         w = w / (w.norm() + 1e-12)
         y = (self.x @ w).tanh()
-        y = y + cfg.noise_std * torch.randn_like(y, generator=g)
+        # randn_like in some PyTorch versions does not accept a generator
+        # argument; the generator passed from the config is only for
+        # reproducibility, so we create the noise separately.
+        noise = cfg.noise_std * torch.randn_like(y)
+        y = y + noise
         self.y = y.unsqueeze(1)
 
     def __len__(self) -> int:
