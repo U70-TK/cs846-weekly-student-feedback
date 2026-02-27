@@ -25,7 +25,7 @@ LibraryTracker/
 
 ```bash
 python3 main.py            # run the (buggy) pipeline
-python3 tests/validate.py  # check your fixes — all 10 checks must PASS
+python3 tests/validate.py  # check your fixes - all 10 checks must PASS
 ```
 
 ## Expected Output (post-fix)
