@@ -1,4 +1,4 @@
-# Week [] Feedback: []
+# Week 7 Feedback: DevReview/Debug
 
 **Authors:** [Neel Sanjaybhai Faganiya, Ibrahim Mohammed Sayem, Felix Wang]
 
@@ -6,7 +6,7 @@
 
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
 
-Find the related files in the ` ` folder.
+Find the related files in the `Week8` folder.
 
 ## Example Problems
 
@@ -17,9 +17,11 @@ Find the related files in the ` ` folder.
 
 **Task Description:** 
 
+You are given a small Flask app (entry point `app.py`, webhook handler in `webhook/views.py`). The app returns 500 when `POST /webhook` is called with a JSON body that omits the `source` field (e.g., `curl -X POST http://127.0.0.1:5000/webhook -H "Content-Type: application/json" -d '{"event": "ping"}'`), raising `TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'`. Your task is to localize the bug and fix the code so that requests with or without `source` are handled without raising this error.
+
 **Starter Code:**
 
-
+The code for this task and its related files can be found in the `artifacts/Problem_A` folder. The code is located at `artifacts/Problem_A/app.py` and `artifacts/Problem_A/webhook/`.
 
 ---
 
