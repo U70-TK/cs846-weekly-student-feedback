@@ -52,11 +52,11 @@ reports consumed by the library's front-desk dashboard.
 The pipeline consists of two modules driven by `main.py`:
 
 ```
-Stage 1 → tracker/loader.py - Ingest CSV files; derive computed fields per record
-Stage 2 → tracker/reports.py  - Compute late fees, genre availability, top books
+Stage 1:tracker/loader.py - Ingest CSV files; derive computed fields per record
+Stage 2: tracker/reports.py  - Compute late fees, genre availability, top books
 ```
 
-Input data in `data/`: [All the generated using ChatGPT]
+Input data in `data/`: [All the data generated using ChatGPT]
 
 | File | Contents |
 |---|---|
@@ -77,8 +77,8 @@ Begin your review at `tracker/loader.py`, line 47, the `available_copies` field 
 **Student Tasks:**
 Using Copilot Chat (GPT-4.1), review the logic of each flagged function, identify all three bugs, and apply the fixes. For every bug, document the incorrect lines, a plain-English explanation of the fault, and the corrected code. Then re-run the validator and confirm **10/10 checks passing**. Submit a terminal screenshot showing the result and the following corrected summary output:
 ```
-Total fees owed  : $8.75
-Genres tracked   : 7
+Total fees owed : $8.75
+Genres tracked  : 7
 
 ...
 
@@ -88,7 +88,7 @@ Genres tracked   : 7
 
 ---
 
-#### Guideline 7 : Instruct the agent to trace from the entry point of your program.
+#### Guideline 7: Instruct the agent to trace from the entry point of your program.
 
 **Prompt and Context:** 
 
@@ -566,3 +566,4 @@ Result: [PASS] 10/10 checks passed
 [4] Saadioui, Z. (2025). The essential guide to reviewing AI-generated code. Arsturn Blog. https://www.arsturn.com/blog/the-essential-guide-to-reviewing-ai-generated-code
 
 [5] Breiding, W. (2025). Developer and AI code reviewer: Reviewing AI-generated code in .NET. Microsoft .NET Blog. https://devblogs.microsoft.com/dotnet/developer-and-ai-code-reviewer-reviewing-ai-generated-code-in-dotnet/
+
