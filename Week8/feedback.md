@@ -321,7 +321,7 @@ The bugs produce no exceptions: the program exits cleanly with code 0. There is 
 
 #### Guideline 3: Generate Debug Outputs
 
-**Task**
+**Task:**
 Open `tracker/reports.py`. Using Copilot (GPT-4.1), apply Guideline 3 to debug `compute_late_fees()`: ask the model to insert debug print statements before the `days_late` calculation, run the code, then ask it to interpret the output and suggest a fix:
 
 **Prompt and Context**
@@ -476,7 +476,7 @@ Although we can see that for the stronger sycophancy-inducing prompt (prompt 4),
 For each suspicious function, instruct the model to apply a structured three step reasoning loop **statically**, without running the code:
 1. **Hypothesize:** state what the function *should* compute,derived from its docstring and the surrounding variable names.
 2. **Predict:** trace through the current implementation everyline and state what it *actually* computes, using concrete example values.
-3. **Conclude:**compare the intended and actual results; if they diverge, propose the minimal fix (one to two tokens) that closes the gap.
+3. **Conclude:** compare the intended and actual results; if they diverge, propose the minimal fix (one to two tokens) that closes the gap.
 
 This loop is directly adapted from AutoSD's Hypothesize|Observe|Conclude pipeline [2], translated from runtime debugging into static code reading. Because Problem C's bugs produce no exceptions, the "Observe" step of the original AutoSD is replaced by a manual trace through the formula where a technique Goedecke [3] calls*structural code review*: bring in the semantic intent of the function as context, not just the diff. Arsturn [4] further reinforces this: AI is reliable on the happy path but misses cases where the formula is logically inverted or directionally reversed, exactly the bug category present in C.
 
@@ -497,9 +497,9 @@ I need you to debug three functions in a Python library tracking pipeline using 
 3. CONCLUDE: Compare your hypothesis against your prediction. If they differ, identify the exact token(s) responsible and propose a one-to-two line fix.
 
 Functions to analyse:
-  • tracker/loader.py  → load_books()(focus: available_copies formula)
-  • tracker/reports.py → compute_late_fees()  (focus: days_late calculation)
-  • tracker/reports.py → availability_by_genre() (focus: utilisation_rate formula)
+  • tracker/loader.py - load_books()(focus: available_copies formula)
+  • tracker/reports.py - compute_late_fees()  (focus: days_late calculation)
+  • tracker/reports.py - availability_by_genre() (focus: utilisation_rate formula)
 
 ```
 
