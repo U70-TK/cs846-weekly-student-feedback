@@ -1,5 +1,5 @@
 """
-Thread - Safe Bank Transfer System
+Thread-Safe Bank Transfer System
 A simple banking module supporting deposits, withdrawals, transfers
 between accounts, and balance queries that intended to be used from
 multiple threads simultaneously.
