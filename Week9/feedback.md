@@ -97,6 +97,7 @@ Guideline 5 asks the the model to list "plausible near-correct bugs" and kill ea
 
 ## 3. Proposed Guideline: Stress-Test with Concurrency Invariant Assertions
 **Task Description**
+
 Open `bank.py`. use (GPT 4.1)  to generate **pytest tests** that use multiple threads for every test, with no single-threaded tests allowed. Each test should define a system-wide invariant (such as conservation, accuracy, liveness, or consistency), spawn 10-20 threads performing concurrent operations, and assert that the invariant holds across 50 repeated iterations. Run the generated tests and record how many of the five concurrency bugs are detected.
 
 **Prompt and Context**
