@@ -93,9 +93,9 @@ FAILED test_bank.py::test_transfer_to_self[100.0-100.0] - assert True is False  
 
 Guideline 5 asks the the model to list "plausible near-correct bugs" and kill each with one deterministic assertion. The model only invents value-level mutations (wrong sign, off-by-one, missing operation) because that is what the guideline's examples teach, it never invents synchronization mutations like *lock released between debit and credit,* so all 5 real bugs are invisible. Even if it did, concurrency bugs are probabilistic and a single-run assertion cannot reliably catch them. The fault model targets the wrong dimension and the execution model gives false confidence.
 
-### 3. New and Updated Guidelines that worked
+## 3. New and Updated Guidelines that worked
 
-## 3. Proposed Guideline: Stress-Test with Concurrency Invariant Assertions
+### 3. Proposed Guideline: Stress-Test with Concurrency Invariant Assertions [1][2]
 **Task Description**
 
 Open `bank.py`. use (GPT 4.1)  to generate **pytest tests** that use multiple threads for every test, with no single-threaded tests allowed. Each test should define a system-wide invariant (such as conservation, accuracy, liveness, or consistency), spawn 10-20 threads performing concurrent operations, and assert that the invariant holds across 50 repeated iterations. Run the generated tests and record how many of the five concurrency bugs are detected.
@@ -158,7 +158,7 @@ The following tests were executed to validate the thread-safe behavior of `bank.
 
 - **Invariant-based oracles handle non-determinism:** Instead of asserting exact return values (which depend on scheduler ordering), the tests verify relational properties (e.g., `a.balance + b.balance == total`) that must hold under any valid thread interleaving.
 
-- **Maps directly to concurrency bug taxonomy:** Each test targets a distinct bug class from the standard classification (Lu et al., ASPLOS 2008): data race (INV4), atomicity violation (INV1), deadlock (INV3), lost update (INV2), and unsafe shared state (INV5).
+- **Maps directly to concurrency bug taxonomy:** Each test targets a distinct bug class from the standard classification [3]: data race (INV4), atomicity violation (INV1), deadlock (INV3), lost update (INV2), and unsafe shared state (INV5).
 
 - **Low overhead, no special tooling:** Uses only `threading.Barrier`, `threading.Lock`, and `thread.join(timeout=...)` from the Python standard library. No model checkers or instrumentation are required-just structured stress testing with loop amplification.
 
@@ -166,4 +166,6 @@ The following tests were executed to validate the thread-safe behavior of `bank.
 ### References
 [1] Luo, Q., Hariri, F., Eloussi, L., & Marinov, D. (2014, November). An empirical analysis of flaky tests. In Proceedings of the 22nd ACM SIGSOFT international symposium on foundations of software engineering (pp. 643-653).
 
-[3] Jain, R., & Purandare, R. (2025). Assessing large language models in comprehending and verifying concurrent programs across memory models. arXiv preprint arXiv:2501.14326.
+[2] Jain, R., & Purandare, R. (2025). Assessing large language models in comprehending and verifying concurrent programs across memory models. arXiv preprint arXiv:2501.14326.
+
+[3] Lu, S., Park, S., Seo, E., & Zhou, Y. (2008, March). Learning from mistakes: a comprehensive study on real world concurrency bug characteristics. In Proceedings of the 13th international conference on Architectural support for programming languages and operating systems (pp. 329-339).
