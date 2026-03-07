@@ -1,5 +1,6 @@
 ### 1.Counterexample Problems
 **The Problem:** Thread-Safe Bank Transfer System.
+
 The project (bank.py) implements a simple but realistic thread-safe bank transfer system, the kind of logic found in any financial service, e-commerce checkout, or game-economy backend where multiple users act on shared state simultaneously.
 
 **Task Description:**
@@ -20,10 +21,10 @@ Open `bank.py`, use (GPT 4.1) to generate pytest tests covering boundary values 
 Generate pytest tests for `bank.py` (BankAccount + TransferService).
 
 Test each method with:
-- Boundary values: $0.01, exact balance, very large amounts
-- Null inputs: None for owner, amount, accounts
-- Invalid inputs: negative amounts, strings, transfer to self
-- Exception paths: insufficient funds, zero balance transfers
+ - Boundary values: $0.01, exact balance, very large amounts
+ - Null inputs: None for owner, amount, accounts
+ - Invalid inputs: negative amounts, strings, transfer to self
+ - Exception paths: insufficient funds, zero balance transfers
 
 Use @pytest.mark.parametrize. Strong assertions on every test.
 ```
@@ -64,11 +65,11 @@ Open `bank.py`,  use (GPT 4.1) to list 5 plausible near-correct bugs (e.g., <= v
 Generate pytest tests for `bank.py`.
 
 Fault model (kill each with ≥1 test, tag `# targets: FM*`):
-- FM1: off-by-one in withdraw balance check (`<` vs `<=`)
-- FM2: deposit subtracts instead of adds
-- FM3: transfer debits src but never credits dst
-- FM4: transfer returns True on insufficient funds
-- FM5: get_total_transfers returns hardcoded 0
+ - FM1: off-by-one in withdraw balance check (`<` vs `<=`)
+ - FM2: deposit subtracts instead of adds
+ - FM3: transfer debits src but never credits dst
+ - FM4: transfer returns True on insufficient funds
+ - FM5: get_total_transfers returns hardcoded 0
 
 Small deterministic inputs. One assertion per FM. Code only.
 ```
@@ -96,7 +97,7 @@ Guideline 5 asks the the model to list "plausible near-correct bugs" and kill ea
 
 ## 3. Proposed Guideline: Stress-Test with Concurrency Invariant Assertions
 **Task Description**
-Open `bank.py`. use (GPT 4.1)  to generate **pytest tests** that use multiple threads for every test, with no single-threaded tests allowed. Each test should define a system-wide invariant (such as conservation, accuracy, liveness, or consistency), spawn 10–20 threads performing concurrent operations, and assert that the invariant holds across 50 repeated iterations. Run the generated tests and record how many of the five concurrency bugs are detected.
+Open `bank.py`. use (GPT 4.1)  to generate **pytest tests** that use multiple threads for every test, with no single-threaded tests allowed. Each test should define a system-wide invariant (such as conservation, accuracy, liveness, or consistency), spawn 10-20 threads performing concurrent operations, and assert that the invariant holds across 50 repeated iterations. Run the generated tests and record how many of the five concurrency bugs are detected.
 
 **Prompt and Context**
 ```
@@ -159,7 +160,6 @@ The following tests were executed to validate the thread-safe behavior of `bank.
 - **Maps directly to concurrency bug taxonomy:** Each test targets a distinct bug class from the standard classification (Lu et al., ASPLOS 2008): data race (INV4), atomicity violation (INV1), deadlock (INV3), lost update (INV2), and unsafe shared state (INV5).
 
 - **Low overhead, no special tooling:** Uses only `threading.Barrier`, `threading.Lock`, and `thread.join(timeout=...)` from the Python standard library. No model checkers or instrumentation are required-just structured stress testing with loop amplification.
-
 
 
 ### References
