@@ -1,5 +1,5 @@
 """
-Smoke tests — sequential only.
+Smoke tests: sequential only.
 These pass but find 0 concurrency bugs.
 
 Run:  python -m pytest test_smoke.py -v
