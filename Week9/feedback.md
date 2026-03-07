@@ -1,4 +1,4 @@
-### 1.Counterexample Problems
+## 1.Counterexample Problems
 **The Problem:** Thread-Safe Bank Transfer System.
 
 The project (bank.py) implements a simple but realistic thread-safe bank transfer system, the kind of logic found in any financial service, e-commerce checkout, or game-economy backend where multiple users act on shared state simultaneously.
@@ -9,7 +9,7 @@ When concurrent transfers run between two accounts (e.g., 10 threads each doing 
 Your task is to use an LLM to generate tests that detect these concurrency bugs by asserting invariants under multi-threaded execution. You must produce both an unguided prompt and a guided prompt, compare the bugs found by each, and document your results.
 
 
-### 2. Guidelines that didn't work
+## 2. Guidelines that didn't work
 
 ### Guideline 3: "Explicitly Request Boundary and Negative Cases, Strong Assertions"
 
