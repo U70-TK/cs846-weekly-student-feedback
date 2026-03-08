@@ -1,5 +1,16 @@
+# Week 9 Feedback: Testing
+
+**Authors:** [Neel Sanjaybhai Faganiya, Ibrahim Mohammed Sayem, Felix Wang]
+
 ## 1.Counterexample Problems
-**The Problem:** Thread-Safe Bank Transfer System.
+
+**Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
+
+Find the related files in the `Week9` folder.
+
+## Example Problems
+
+**Problem A:** Thread-Safe Bank Transfer System.
 
 The project (bank.py) implements a simple but realistic thread-safe bank transfer system, the kind of logic found in any financial service, e-commerce checkout, or game-economy backend where multiple users act on shared state simultaneously.
 
@@ -8,6 +19,33 @@ You are given a small bank transfer module (`bank.py`). The module contains two 
 When concurrent transfers run between two accounts (e.g., 10 threads each doing transfer(alice, bob, 1) and transfer(bob, alice, 1) in a loop), the system exhibits several failures: total money across accounts does not remain constant, get_total_transfers() returns fewer transfers than actually succeeded, opposite-direction transfers can cause threads to hang indefinitely, and get_balance() can return stale values during concurrent deposits.
 Your task is to use an LLM to generate tests that detect these concurrency bugs by asserting invariants under multi-threaded execution. You must produce both an unguided prompt and a guided prompt, compare the bugs found by each, and document your results.
 
+---
+
+### Problem B: 
+
+**Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
+
+
+**Task Description:**
+
+Write pytest unit tests for the function `clamp(value, lo, hi)` in `clamp.py`, which returns value clamped to the closed interval [lo, hi]: if value < lo it returns lo, if value > hi it returns hi, otherwise it returns value (the function assumes lo <= hi and does not validate inputs). Do not modify clamp.py. Use pytest with @pytest.mark.parametrize where appropriate, cover boundary cases (below lo, above hi, equal to lo, equal to hi, and strictly between lo and hi), and use strong assertions that check exact expected return values; deliver a single runnable test file with clear test names.
+
+**Starter Code:**
+
+The code for this task and its related files can be found in the `artifacts/Problem_B` folder. The code is located at `artifacts/Problem_B/clamp.py`.
+
+---
+
+### Problem C: 
+
+**Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
+
+
+**Task Description:**
+
+**Student Tasks:**
+
+---
 
 ## 2. Guidelines that didn't work
 
@@ -95,7 +133,7 @@ Guideline 5 asks the the model to list "plausible near-correct bugs" and kill ea
 
 ## 3. New and Updated Guidelines that worked
 
-### 3. Proposed Guideline: Stress-Test with Concurrency Invariant Assertions [1][2]
+### Guideline 1: Stress-Test with Concurrency Invariant Assertions [1][2]
 **Task Description**
 
 Open `bank.py`. use (GPT 4.1)  to generate **pytest tests** that use multiple threads for every test, with no single-threaded tests allowed. Each test should define a system-wide invariant (such as conservation, accuracy, liveness, or consistency), spawn 10-20 threads performing concurrent operations, and assert that the invariant holds across 50 repeated iterations. Run the generated tests and record how many of the five concurrency bugs are detected.
