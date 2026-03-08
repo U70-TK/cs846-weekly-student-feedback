@@ -14,6 +14,8 @@ Find the related files in the `Week9` folder.
 
 **Problem A:** Thread-Safe Bank Transfer System.
 
+**Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
+
 The project (bank.py) implements a simple but realistic thread-safe bank transfer system, the kind of logic found in any financial service, e-commerce checkout, or game-economy backend where multiple users act on shared state simultaneously.
 
 **Task Description:**
@@ -23,7 +25,7 @@ Your task is to use an LLM to generate tests that detect these concurrency bugs 
 
 ---
 
-### Problem B: 
+### Problem B: Unit tests for clamp()
 
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
 
