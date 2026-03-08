@@ -1,5 +1,5 @@
 import pytest
-from Week9.artifacts.problem_b.clamp import clamp
+from clamp import clamp
 
 # Behavior 1: Value below lower bound
 @pytest.mark.parametrize("value, lo, hi, expected", [
