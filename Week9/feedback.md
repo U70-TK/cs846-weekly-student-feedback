@@ -1,4 +1,4 @@
-# Week 9 Feedback: Testing
+# Week 9 Feedback: Testing / QA
 
 **Authors:** [Neel Sanjaybhai Faganiya, Ibrahim Mohammed Sayem, Felix Wang]
 
