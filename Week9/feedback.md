@@ -16,6 +16,8 @@ Find the related files in the `Week9` folder.
 
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
 
+**Model to Use:** GPT-4.1
+
 The project (bank.py) implements a simple but realistic thread-safe bank transfer system, the kind of logic found in any financial service, e-commerce checkout, or game-economy backend where multiple users act on shared state simultaneously.
 
 **Task Description:**
@@ -29,6 +31,7 @@ Your task is to use an LLM to generate tests that detect these concurrency bugs 
 
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
 
+**Model to Use:** GPT-4.1
 
 **Task Description:**
 
@@ -102,6 +105,8 @@ These 4 failures are false alarms, they are tests asserting validation logic tha
 
 Guideline 3 says: explicitly require categories of non-happy-path tests, null inputs, invalid formats, boundary values, exception paths with *minimum counts per category.*
 This pushes the LLM to generate tests for every possible invalid input *regardless of whether the code is designed to handle them*. The guideline never says "first check what the code actually validates." It says "demand at least 2 tests per category for every function."
+
+---
 
 ### Guideline 5: "Use a Fault Model (Mutation Mindset) to Drive Test Adequacy"
 
