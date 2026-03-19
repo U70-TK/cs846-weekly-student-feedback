@@ -106,7 +106,7 @@ Correct:  ✗ FAILED
 **Why this Solution is Bad**
 
 Guideline 2 Failure: "Allow Algorithm/Data Structure Changes"
-Semantic Change: LLM replaces "conflict with ACCEPTED transactions" with "conflict with ALL SEEN transactions" — fundamentally changing business logic while appearing to optimize.
+Semantic Change: LLM replaces "conflict with ACCEPTED transactions" with "conflict with ALL SEEN transactions", fundamentally changing business logic while appearing to optimize.
 
 Silent Correctness Bug: A transaction following a rejected transaction on the same resource should be accepted, but the optimized version incorrectly rejects it.
 
@@ -202,14 +202,14 @@ Correct:  ✓ PASSED
 **Why this Solution is Good**
 
 ```
-1. **Forces Verification Before Acceptance**
+1. Forces Verification Before Acceptance
 Unlike Guidelines 2/6 which permit changes without proof, Guideline 8 requires the LLM to demonstrate correctness on edge cases before the optimization is accepted.
 
-2. **Uses Discriminating Test Cases**
+2. Uses Discriminating Test Cases
 Provides specific inputs designed to expose semantic bugs that random test data misses, directly targeting the difference between `all seen` vs `only accepted` logic.
-3. **Requires Step-by-Step Tracing**
+3. Requires Step-by-Step Tracing
 Asking the LLM to show intermediate variable states forces it to mentally execute its code, making logical errors visible that abstract reasoning misses.
-4. **Makes Correctness a Prerequisite**
+4. Makes Correctness a Prerequisite
 Since 62% of LLM optimizations introduce bugs, Guideline 8 ensures correctness is verified first, speed gains only count if behavior is preserved.
 ```
 
