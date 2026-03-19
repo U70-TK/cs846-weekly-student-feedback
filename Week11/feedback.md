@@ -135,7 +135,7 @@ Test Evasion: Random test data often produces identical results, so the bug only
 
 ### 3. New and Updated Guidelines that worked
 
-#### Guideline 1: Map External Contracts and Semantic Invariants Before Optimizing [1, 2]
+#### Guideline 1: Verify Semantic Equivalence on Discriminating Test Cases Before Accepting Performance Optimizations [1,2,3]
 
 **Model to Use:** GPT-4.1
 
