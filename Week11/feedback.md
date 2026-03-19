@@ -203,7 +203,7 @@ Correct:  ✓ PASSED
 
 ```
 1. Forces Verification Before Acceptance
-Unlike Guidelines 2/6 which permit changes without proof, Guideline 8 requires the LLM to demonstrate correctness on edge cases before the optimization is accepted.
+Unlike Guidelines 2 which permit changes without proof, Guideline 8 requires the LLM to demonstrate correctness on edge cases before the optimization is accepted.
 
 2. Uses Discriminating Test Cases
 Provides specific inputs designed to expose semantic bugs that random test data misses, directly targeting the difference between `all seen` vs `only accepted` logic.
