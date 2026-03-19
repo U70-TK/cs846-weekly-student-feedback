@@ -218,3 +218,12 @@ Correct:  ✓ PASSED
 ...
 
 ---
+
+### References
+
+1. Misra, S. LLMs struggle to write performant code. Codeflash. https://www.codeflash.ai/blog-posts/llms-struggle-to-write-performant-code
+
+2. Coignion, T., Quinton, C., & Rouvoy, R. (2025, November). When Faster Isn't Greener: The Hidden Costs of LLM-Based Code Optimization. In ASE'25-40th International Conference on Automated Software Engineering.
+
+3. Gong, J., Voskanyan, V., Brookes, P., Wu, F., Jie, W., Xu, J., ... & Wang, Z. (2025). Language models for code optimization: Survey, challenges and future directions. arXiv preprint arXiv:2501.01277.
+
