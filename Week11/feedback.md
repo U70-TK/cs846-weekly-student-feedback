@@ -15,6 +15,8 @@ Find the related files in the `artifacts`, and `feedback.md` folder.
 **Github repository URL:** https://github.com/U70-TK/cs846-requirement-example
 
 **Model to Use:** GPT-4.1
+
+
 **Task Description:** 
 You are given a `TransactionConflictResolver` class in `conflict_resolver.py` that processes a batch of transactions and returns only non-conflicting ones. A transaction conflicts if it modifies the same resource as any previously accepted transaction (not just any previously seen transaction). The code is functionally correct but has `O(n²)` complexity and apparent dead **code**. Optimize the `process_transactions` method to run faster while preserving correctness. All existing test cases in `test_resolver.py` must continue to pass after your changes.
 
