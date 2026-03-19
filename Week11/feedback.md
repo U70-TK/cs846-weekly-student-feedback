@@ -49,9 +49,11 @@ The code for this task can be found in the Problem_D folder. Run the test using 
 
 ---
 
-#### Guideline : 
+#### Guideline 2: Tell the LLM it is allowed to change the algorithm, not just the code style
 
 **Prompt and Context:** 
+
+
 
 **Task:**  
 
@@ -89,6 +91,22 @@ The code for this task can be found in the Problem_D folder. Run the test using 
 #### Guideline 1:
 
 **Prompt and Context:** 
+This code is slow. Before optimizing:
+
+1. List every instance variable modified (self.*, globals, caches).
+   For each, ask: "Could another service/process read this?"
+
+2. The current algorithm uses O(n²) checks. Describe the EXACT 
+   CONDITION being checked — not just "conflict detection" but 
+   "conflict with previously ACCEPTED transactions only."
+
+3. If you change the algorithm, prove the new version produces 
+   identical results for: (a) all accepted, (b) all rejected, 
+   (c) mixed accept/reject scenarios.
+
+4. If you remove code, confirm no external system consumes its output.
+
+Only then propose change for optimization
 
 **Task:** 
 
